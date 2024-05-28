@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Define environment variable
-ENV FLASK_APP=server.py
+ENV FLASK_APP=app.py
 
 # Run app.py when the container launches
-CMD ["flask", "--app server.py", "run", "--host=0.0.0.0"]
+CMD ["python", "app.py"]
