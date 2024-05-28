@@ -8,6 +8,11 @@ laBSE_model = SentenceTransformer("setu4993/LaBSE")
 app = Flask(__name__)
 
 
+@app.route("/")
+def home():
+    return "Hello, World!"
+
+
 @app.route("/encode", methods=["POST"])
 def encode_query():
     data = request.json
@@ -25,6 +30,6 @@ def encode_query():
 if __name__ == "__main__":
     from waitress import serve
 
+    print("running __main__")
+
     serve(app, host="0.0.0.0", port=5000)
-    # Run the Flask app
-    # app.run(host="0.0.0.0", port=5000)
